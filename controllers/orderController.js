@@ -129,7 +129,7 @@ exports.updateOrderErr = catchAsync(async (req, res, next) => {
     req.body.total += thisProduct.price * req.body.cart[i].quantity;
   }
   /////////////////////////////////////////////يتطلب اتصال بشبكة//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if (req.body.whisstatus) {
+  if (req.body.withDelivery) {
     const locationBranch = await Location.findById(thisBranch.location);
     const locationUser = await Location.findById(req.body.location);
     if (!locationBranch || !locationUser)
