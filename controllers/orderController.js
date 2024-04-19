@@ -18,7 +18,7 @@ exports.getAllOrder = factory.getAllpop1(
   },
   {
     path: "delivery",
-    select: "firstName lastName phone -_id",
+    select: "name phone -_id",
   },
   {
     path: "location",
@@ -36,13 +36,13 @@ exports.getOrder = factory.getOne(
   },
   {
     path: "delivery",
-    select: "firstName lastName phone -_id",
+    select: "name phone -_id",
   },
   {
     path: "location",
   },
   {
-    path: "restaurant",
+    path: "branch",
     select: "name -_id",
   }
 );
