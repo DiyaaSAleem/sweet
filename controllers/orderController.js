@@ -52,8 +52,8 @@ exports.createOrder = catchAsync(async (req, res, next) => {
   const thisBranch = await Branch.findById(req.body.branch);
   req.body.total = 0;
   let thisProduct;
-  if (req.body.statuspaid == "نقدي") {
-    req.body.paid = false;
+  if (!req.body.statuspaid == "نقدي") {
+    req.body.paid = true;
   }
   for (let i = 0; i < req.body.cart.length; i++) {
     thisProduct = await Product.findById(req.body.cart[i].product);
@@ -115,7 +115,7 @@ exports.updateOrderErr = catchAsync(async (req, res, next) => {
   const thisBranch = await Branch.findById(req.body.branch);
   req.body.total = 0;
   let thisProduct;
-  if (req.body.statuspaid == "نقدي") {
+  if (!req.body.statuspaid == "نقدي") {
     req.body.paid = true;
   }
   for (let i = 0; i < req.body.cart.length; i++) {
@@ -149,6 +149,7 @@ exports.updateOrderErr = catchAsync(async (req, res, next) => {
       .get(apiUrl)
       .then(async (response) => {
         const data = response.data;
+        req.body.cart = arrcart;
         req.body.priceDelivery = data.routes[0].distance * 0.02 || 20;
         req.body.duration =
           Math.ceil(data.routes[0].duration / 60) + Math.random() * 120; //اضفة رقم عشوئي يمثل الذمن المتوقع لتحضير الطلب
@@ -170,7 +171,7 @@ exports.updateOrderErr = catchAsync(async (req, res, next) => {
   }
   /////////////////////////////////////////////بدون اتصال///////////////////////////////////////////////////
   else {
-    req.body.cart = arrcart;
+    // req.body.cart = arrcart;
     req.body.priceDelivery = 0;
     req.body.duration = Math.random() * 120; //اضفة رقم عشوئي يمثل الذمن المتوقع لتحضير الطلب
     req.body.user = req.user._id;

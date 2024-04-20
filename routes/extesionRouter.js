@@ -31,13 +31,13 @@ router
   .route("/:id")
   .get(authMiddlewers.protect, extesionController.getextesion)
   .patch(
-    authMiddlewers.restrictTo("user"),
     authMiddlewers.protect,
+    authMiddlewers.restrictTo("user"),
     extesionController.updateextesion
   )
   .delete(
-    authMiddlewers.restrictTo("user"),
     authMiddlewers.protect,
+    authMiddlewers.restrictTo("user"),
     extesionController.deleteextesion
   );
 router
