@@ -3,20 +3,20 @@ const Order = require("./orderModel");
 const extesionSchema = new mongoose.Schema(
   {
     photo: {
-      required: [true, "must enter photo"],
+      required: [true, "يجب ادخال الصورة التي تريد اضافتها على الحلوة او الكيكة"],
       type: String,
     },
     description: {
-      required: [true, "must enter description"],
+      required: [true, "يجب إدخال وصف حول هذه الإضافة"],
       type: String,
     },
     order: {
-      required: [true, "must enter order"],
+      required: [true, "يجب إدخال الطلب الذي تريد عليه الاضافة"],
       type: mongoose.Schema.ObjectId,
       ref: "Order",
     },
     quantity: {
-      required: [true, "must enter quantity"],
+      required: [true, "يجب ادخال الكمية"],
       type: Number,
     },
   },

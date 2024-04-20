@@ -5,7 +5,7 @@ const reviewSchema = new mongoose.Schema(
   {
     review: {
       type: String,
-      required: [true, "Review can not be empty!"],
+      required: [true, "التقييم للطلب يجب أن لا يكون فارغ"],
     },
     rating: {
       type: Number,
@@ -15,13 +15,13 @@ const reviewSchema = new mongoose.Schema(
     order: {
       type: mongoose.Schema.ObjectId,
       ref: "Order",
-      required: [true, "Review must belong to a tour."],
+      required: [true, "المراجعة يجب أن تنتمي لطلب."],
       unique: true,
     },
     user: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
-      required: [true, "Review must belong to a user"],
+      required: [true, "المراجعة يجب أن تنتمي لمستخدم"],
     },
   },
   { timestamps: true }

@@ -31,7 +31,7 @@ const deliverySchema = new mongoose.Schema(
         validator: (el) => {
           /(\+963\d{9}|09\d{8})/.test(el);
         },
-        message: "الرقم غير صيحيح",
+        message: "الرقم غير صحيح",
       },
     },
   },

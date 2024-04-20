@@ -41,7 +41,7 @@ const productSchema = new mongoose.Schema(
       default: "وسط",
     },
     flavor: {
-      required: [true, "يجب ادخال النكهة المنتج"],
+      required: [true, "يجب ادخال نكهة المنتج"],
       type: String,
     },
     ratingsAverage: {

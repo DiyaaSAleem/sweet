@@ -2,19 +2,19 @@ const mongoose = require("mongoose");
 const locationSchema = new mongoose.Schema({
   Longitude: {
     type: Number,
-    required: [true, "A location must have a Longitude"],
+    required: [true, "يجب إدخال خط الطول"],
   },
   Latitude: {
     type: Number,
-    required: [true, "A location must have a Latitude"],
+    required: [true, "يجب إدخال خط العرض"],
   },
   region: {
     type: String,
-    required: [true, "A location must have a region"],
+    required: [true, "يجب إدخال المنطقة"],
   },
   street: {
     type: String,
-    required: [true, "A location must have a street"],
+    required: [true, "يجب إدخال الشارع"],
   },
 });
 const Location = mongoose.model("Location", locationSchema);

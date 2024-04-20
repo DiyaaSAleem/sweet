@@ -4,7 +4,7 @@ const orderSchema = new mongoose.Schema(
     branch: {
       type: mongoose.Schema.ObjectId,
       ref: "Branch",
-      required: [true, "enter filde Restaurant"],
+      required: [true, "يجب دخال اسم الفرع"],
     },
     cart: [
       {
@@ -12,14 +12,14 @@ const orderSchema = new mongoose.Schema(
         quantity: { type: Number, default: 1 },
         price: {
           type: Number,
-          required: [true, "A product must have a price"],
+          required: [true, "المنتج يجب أن يكون له سعر"],
         },
       },
     ],
     user: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
-      required: [true, "A order must have a user"],
+      required: [true, "الطلب يجب أن يكون له مستخدم"],
     },
     withDelivery: {
       type: Boolean,
@@ -33,7 +33,7 @@ const orderSchema = new mongoose.Schema(
     location: {
       type: mongoose.Schema.ObjectId,
       ref: "Location",
-      required: [true, "restaurant must have a Location."],
+      required: [true, "الفرع يجب أن يكون له موقع"],
     },
     priceExtesion: {
       type: Number,
@@ -45,12 +45,11 @@ const orderSchema = new mongoose.Schema(
     },
     total: {
       type: Number,
-      required: [true, "A order must have a total"],
+      required: [true, "الطلب يجب أن يكون لديه سعر إجمالي"],
     },
     duration: {
       type: Number,
-      required: [true, "A order must have a Duration"],
-    },
+    required: [true, "الطلب يجب أن يكون لديه مدة"],    },
     paidstatus: {
       type: String,
       required: true,

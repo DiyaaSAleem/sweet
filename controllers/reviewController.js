@@ -58,12 +58,12 @@ exports.deleteReview = factory.deleteOne(Review);
 // });
 exports.getAllReviewProduct = factory.getAllpop1(
   ReviewProduct,
-  { path: "prodect" },
+  { path: "product" },
   { path: "user", select: "name phone" }
 );
 exports.getReviewProduct = factory.getOne(
   ReviewProduct,
-  { path: "prodect" },
+  { path: "product" },
   { path: "user", select: "name phone" }
 );
 exports.createReviewProduct = factory.createOne(ReviewProduct);
